@@ -1,4 +1,6 @@
-// Define the total number of records and records per page
+ <?php
+				
+			// Define the total number of records and records per page
 			$totalRecords = $itemCount/* Get the total number of records from your data source */;
 			$recordsPerPage = 100; // You can adjust this value as needed
 
@@ -19,6 +21,7 @@
 			if ($pages >= 1 && $page <= $pages) {
 				if ($page > 1) {
 					echo "<a class='btn btn-sm btn-info' href='invoice_list.php?page=". ($page - 1) ."'> Prev </a>";
+					echo "<a class='btn btn-sm btn-info' href='invoice_list.php?page=1'> First </a>";
 				}
 
 				$pagLink = '';
@@ -38,8 +41,10 @@
 				echo $pagLink;
 
 				if ($page < $pages) {
+					echo "<a class='btn btn-sm btn-info' href='invoice_list.php?page=" . $pages . "'> Last </a>";
 					echo "<a class='btn btn-sm btn-info' href='invoice_list.php?page=" . ($page + 1) . "'> Next </a>";
 				}
 			}
 
 			echo '</td></tr>';
+          ?>
